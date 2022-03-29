@@ -42,39 +42,18 @@ public class Sketch extends PApplet {
     //Quadrant 3
     int c = 0;
     for (int w = 0 ; w <= width / 2; w ++) {  
+      c = w * 255*2 / width;
       stroke(c);
       line(w, height/2, w, height);
-      c++ ;
     }
     //Quadrant 4
-  
-    int i = 0;
-    int a = 0;
-    int b = -15;
+    translate(width * 3 / 4, height * 3 / 4);
     for (int count = 0; count < 8; count++) {
-    
       fill(0, 160, 127); 
-      ellipse(width * 3 / 4 + a, height * 3 / 4 + b, 20, 60);
-      rotate(radians(i));
-      i += 45;
-      if (count <= 2) {
-        a += 7.5;
-        b += 7.5;
-      } 
-      if (count > 2 && count <= 4) {
-        a -= 7.5;
-        b += 7.5;
-      } 
-      if (count > 4 && count <= 6) {
-        a -= 7.5;
-        b -= 7.5;
-      } 
-      if (count > 6 && count <= 8) {
-        a += 7.5;
-        b -= 7.5;
-      }
+      ellipse(width / 10, 0 , width / 5, height / 12 );
+      rotate(radians(45));
       fill(255, 200, 0); 
-      ellipse(width * 3 / 4, height * 3 / 4, 30, 30);
+      ellipse(0, 0, width / 10, height / 10);
       
     }
   }
